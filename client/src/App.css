@@ -19,6 +19,14 @@ form {
   color: black;
 } */
 
+#leadEl {
+  margin-bottom: 10px;
+}
+
+#searchB {
+  margin-bottom: 10px;
+}
+
 .footer {
   position: sticky;
   width: 100%;
