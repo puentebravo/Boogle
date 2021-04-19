@@ -6,7 +6,7 @@ function Header() {
     <div className="container.fluid">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link className="navbar-brand" to="/">
-          Charlie Puente
+          Boogle
         </Link>
         <button
           className="navbar-toggler"
@@ -35,13 +35,13 @@ function Header() {
             </li>
             <li
               className={
-                window.location.pathname === "/portfolio"
+                window.location.pathname === "/saved"
                   ? "nav-item active"
                   : "nav-item"
               }
             >
-              <Link className="nav-link" to="/portfolio">
-                <i className="fas fa-atom"></i> Portfolio
+              <Link className="nav-link" to="/saved">
+                <i className="fas fa-atom"></i> Saved Books
               </Link>
             </li>
           </ul>
