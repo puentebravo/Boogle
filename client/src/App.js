@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Search from "./pages/search/search";
-import Saved from "./pages/saved/saved";
+import Search from "./pages/search/index";
+import Saved from "./pages/saved/index";
 import "./App.css";
 
 function App() {
