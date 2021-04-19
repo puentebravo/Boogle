@@ -5,10 +5,10 @@ import Lead from "../../components/lead";
 import SearchBar from "../../components/searchbar";
 import SearchResults from "../../components/searchresults";
 import Footer from "../../components/footer";
-import "./search.css";
+import "./style.css";
 
 function Search() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("Rainbow Six");
   const [results, setResults] = useState([]);
 
   useEffect(() => {
