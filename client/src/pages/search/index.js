@@ -8,15 +8,16 @@ import Footer from "../../components/footer";
 import "./style.css";
 
 function Search() {
-  const [search, setSearch] = useState("Rainbow Six");
+  const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
 
+  console.log(search)
   useEffect(() => {
     if (!search) {
       return;
     }
     API.ping(search).then((res) => {
-      if (res.items.length === 0 || !res.items) {
+      if (res.totalitems === 0) {
         throw new Error("No Books found.");
       }
       setResults(res.items);
@@ -25,9 +26,6 @@ function Search() {
 
   const handleInputChange = (event) => {
     setSearch(event.target.value);
-    if (event.target.value === "") {
-      setSearch("");
-    }
   };
 
   const handleFormSubmit = (event) => {
