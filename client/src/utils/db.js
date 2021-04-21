@@ -9,4 +9,7 @@ export default {
     save: function() {
         return axios.post(ENDPOINT)
     },
+    delete: function(id) {
+        return axios.delete(`/api/saved/${id}`)
+    }
 }
