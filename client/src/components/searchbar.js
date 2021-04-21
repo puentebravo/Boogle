@@ -9,7 +9,7 @@ function SearchBar(props) {
           onSubmit={props.handleInputChange}
           className="form-control me-2"
           type="search"
-          placeholder="Search Directory"
+          placeholder="Search Books"
           aria-label="Search"
         />
       </form>
