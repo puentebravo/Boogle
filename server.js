@@ -11,12 +11,15 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/savedbooks", {
   useFindAndModify: false,
 });
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(require("./db/routes.js"))
+app.use(require("./db/routes.js"));
 
 // Send every request to the React app
 // Define any API routes before this runs
