@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Book = require("../models/Book.js");
+const Book = require("../models/Book");
 
 router.post("/api/saved", (req, res) => {
   Book.create(req.body)
