@@ -8,7 +8,7 @@ function SearchResults(props) {
     <div className="container">
       <div className="row">
         <div className="card col-lg">
-          <h1 className="display-4">Results</h1>
+          <h1 className="display-4 text-center">Results</h1>
           <ul className="list-group">
             {results.map((books, index) => (
               <li className="list-group-item" key={index}>
