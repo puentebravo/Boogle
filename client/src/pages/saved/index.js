@@ -6,16 +6,6 @@ import Footer from "../../components/footer";
 import "./style.css";
 
 function Saved() {
-  // const [saved, setSaved] = useState();
-
-  // useEffect(() => {
-  //   if (!saved) {
-  //     return;
-  //   }
-  //   DB.getList().then((res) => {
-  //     setSaved(res);
-  //   });
-  // }, []);
 
   return (
     <div>
