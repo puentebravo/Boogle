@@ -8,6 +8,9 @@ function SearchResults(props) {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
+    if (props.search === "") {
+      return
+    }
     API.ping(props.search).then((res) => {
       if (res.totalitems === 0) {
         throw new Error("No Books found.");
