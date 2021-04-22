@@ -5,7 +5,7 @@ function SearchBar(props) {
     <div className="row justify-content-center" id="searchB">
       <form className="d-flex">
         <input
-          query={props.search}
+          value={props.query}
           onSubmit={props.handleInputChange}
           className="form-control me-2"
           type="search"
