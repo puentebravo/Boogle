@@ -7,7 +7,7 @@ import Footer from "../../components/footer";
 import "./style.css";
 
 function Search() {
-  const [search, setSearch] = useState("The Matrix");
+  const [search, setSearch] = useState("The Hunt for Red October");
 
   const handleInputChange = (event) => {
     setSearch(event.target.value);
@@ -15,6 +15,9 @@ function Search() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    console.log(event.target.value);
+    console.log("Form submitted");
+    setSearch(event.target.value);
   };
 
   return (
@@ -26,7 +29,7 @@ function Search() {
         handleInputChange={handleInputChange}
         query={search}
       />
-      <SearchResults search={search}/>
+      <SearchResults search={search} />
       <Footer />
     </div>
   );
