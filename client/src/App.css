@@ -8,8 +8,15 @@ body {
   background-image: url(./assets/images/library.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
 }
+
+/* .display-4,
+.lead,
+.card-text,
+.card-title,
+form {
+  color: black;
+} */
 
 #leadEl {
   margin-bottom: 10px;
