@@ -7,9 +7,7 @@ import Footer from "../../components/footer";
 import "./style.css";
 
 function Search() {
-  const [search, setSearch] = useState("");
-
-  console.log(search)
+  const [search, setSearch] = useState("The Matrix");
 
   const handleInputChange = (event) => {
     setSearch(event.target.value);
