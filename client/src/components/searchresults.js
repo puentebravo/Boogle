@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../utils/API";
 
 function SearchResults(props) {
-  const results = props.results;
-  console.log(results);
+  
+  console.log(props.search)
+
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    API.ping(props.search).then((res) => {
+      if (res.totalitems === 0) {
+        throw new Error("No Books found.");
+      }
+      setResults(res.items);
+    });
+  }, [props.search]);
+
+  console.log(results)
 
   return (
     <div className="container">
@@ -14,31 +28,25 @@ function SearchResults(props) {
               <li className="list-group-item" key={index}>
                 <div
                   className="card text-white bg-dark mb-3"
-                  style="max-width: 540px;"
                 >
                   <div className="row g-0">
                     <div className="col-md-4">
-                      <img
-                        src={books.items.volumeInfo.imageLinks.thumbnail}
-                        alt=""
-                      />
+                      <img src={books.volumeInfo.imageLinks.thumbnail} alt="" />
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">
-                          {books.items.volumeInfo.title}
-                        </h5>
+                        <h5 className="card-title">{books.volumeInfo.title}</h5>
                         <p className="card-text">
                           <small className="text-muted">
-                            {books.items.volumeInfo.authors}
+                            {books.volumeInfo.authors}
                           </small>
                         </p>
                         <p className="card-text">
-                          {books.items.volumeInfo.description}
+                          {books.volumeInfo.description}
                         </p>
                         <a
                           className="btn btn-light"
-                          href={books.items.volumeInfo.infoLink}
+                          href={books.volumeInfo.infoLink}
                         >
                           View
                         </a>
