@@ -6,10 +6,10 @@ function SearchResults(props) {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    if (props.search === "") {
-      return;
-    }
     API.ping(props.search).then((res) => {
+      if (!res.data.items){
+        return
+      }
       console.log(res.items);
       setResults(res.data.items);
     });
@@ -50,6 +50,7 @@ function SearchResults(props) {
                         <button
                           type="button"
                           className="btn btn-light"
+                          onClick={() => db.save(index)}
                         >
                           Save
                         </button>
