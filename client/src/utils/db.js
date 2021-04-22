@@ -3,7 +3,7 @@ import axios from "axios";
 const ENDPOINT = "/api/saved"
 
 export default {
-    getList: function () {
+    getList: function() {
         return axios.get(ENDPOINT)
     },
     save: function() {
