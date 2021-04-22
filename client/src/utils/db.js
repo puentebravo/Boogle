@@ -6,8 +6,8 @@ export default {
     getList: function() {
         return axios.get(ENDPOINT)
     },
-    save: function() {
-        return axios.post(ENDPOINT)
+    save: function(book) {
+        return axios.post(ENDPOINT, book)
     },
     delete: function(id) {
         return axios.delete(`/api/saved/${id}`)
