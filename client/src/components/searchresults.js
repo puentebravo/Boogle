@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import db from "../utils/db";
 
 function SearchResults(props) {
-  
-  console.log(props.search)
-
   const [results, setResults] = useState([]);
 
   useEffect(() => {
     if (props.search === "") {
-      return
+      return;
     }
     API.ping(props.search).then((res) => {
-      if (res.totalitems === 0) {
-        throw new Error("No Books found.");
-      }
-      setResults(res.items);
+      console.log(res.items);
+      setResults(res.data.items);
     });
   }, [props.search]);
 
-  console.log(results)
+  console.log(results);
 
   return (
     <div className="container">
@@ -29,9 +25,7 @@ function SearchResults(props) {
           <ul className="list-group">
             {results.map((books, index) => (
               <li className="list-group-item" key={index}>
-                <div
-                  className="card text-white bg-dark mb-3"
-                >
+                <div className="card text-white bg-dark mb-3">
                   <div className="row g-0">
                     <div className="col-md-4">
                       <img src={books.volumeInfo.imageLinks.thumbnail} alt="" />
@@ -56,7 +50,6 @@ function SearchResults(props) {
                         <button
                           type="button"
                           className="btn btn-light"
-                          key={index}
                         >
                           Save
                         </button>
